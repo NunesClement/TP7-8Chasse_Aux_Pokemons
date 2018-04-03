@@ -7,16 +7,17 @@ public class Jouet extends Item implements Utilisable, Modifiable{
 	private int apportSatisfaction;
 	private int apportLoyaute;
 	
-	public Jouet(int apportAppetit, int apportSatisfaction, int apportLoyaute) {
-		super(getNom(), getFrequence());
-		this.apportAppetit = apportAppetit;
-		this.apportSatisfaction = apportSatisfaction;
-		this.apportLoyaute = apportLoyaute;
-	}
-
 	@Override
 	public void modifier() {
 		
+	}
+
+	public Jouet(String nom, int frequence, int utilisations, int apportAppetit, int apportSatisfaction,
+			int apportLoyaute) {
+		super(nom, frequence, utilisations);
+		this.apportAppetit = apportAppetit;
+		this.apportSatisfaction = apportSatisfaction;
+		this.apportLoyaute = apportLoyaute;
 	}
 
 	@Override
