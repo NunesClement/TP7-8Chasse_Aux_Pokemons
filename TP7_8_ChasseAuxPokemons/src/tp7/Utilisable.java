@@ -1,4 +1,5 @@
 package tp7;
+
 import AncienTP.Joueur;
 
 public interface Utilisable {
