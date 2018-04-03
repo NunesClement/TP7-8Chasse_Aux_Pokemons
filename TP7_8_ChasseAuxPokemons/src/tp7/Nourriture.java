@@ -1,7 +1,6 @@
 package tp7;
-import AncienTP.Joueur;
-import tp7.Item;
-import tp7.Utilisable;
+
+import AncienTP.*;
 
 public class Nourriture extends Item implements Utilisable{
 	private int apport;
@@ -45,7 +44,7 @@ public class Nourriture extends Item implements Utilisable{
 		return (getNom()+":"+getFrequence()+","+apport+","+getUtilisationRestantes()+"/"+getUtilisations()+","+compatibilites);
 	}
 
-	
+	@Override
 	public void utiliser(Joueur j, int indexPokemon) {
 		AncienTP.Pokemon[] sesPokemon = j.getPokemons();
 		AncienTP.Pokemon mangeur = sesPokemon[indexPokemon];
@@ -53,10 +52,9 @@ public class Nourriture extends Item implements Utilisable{
 			mangeur.baisseAppetit(this.apport);
 			super.baisseUtilisations(1);
 		}
-		else {
+		else 
 			System.out.println("Votre pokemon ne pourra pas manger cette nourriture, qui n'est pas compatible avec son type.");
-		}
-		
+	}
+	
 	}
 
-}
